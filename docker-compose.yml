@@ -1,0 +1,5 @@
+version: '1'
+services:
+    golang-arm:
+        build: .
+image: szenekonzept/golang-armhf
