@@ -11,3 +11,11 @@ ENV GOPATH=/opt/go
 ENV GOOS=linux
 ENV GOARCH=arm
 ENV GOARM=7
+
+
+ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
+
+RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH"
+WORKDIR $GOPATH
+
+COPY go-wrapper /usr/local/bin/
