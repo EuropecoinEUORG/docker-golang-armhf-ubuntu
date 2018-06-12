@@ -1,6 +1,9 @@
 FROM armhf/ubuntu
 
-RUN add-apt-repository ppa:longsleep/golang-backports
+RUN apt-get update -y \
+&& apt-get install software-properties-common --fix-missing --reinstall -y
+
+RUN add-apt-repository ppa:longsleep/golang-backports -y
 
 RUN apt-get update -y \
     && apt-get upgrade -y \
