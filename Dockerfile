@@ -8,6 +8,7 @@ RUN add-apt-repository ppa:longsleep/golang-backports -y
 RUN apt-get update -y \
     && apt-get upgrade -y \
     && apt-get install --no-install-recommends -y curl ca-certificates git golang-go -y \
+    && apt-get install build-essential -y \
     && apt-get autoremove -y \
     && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/* /root/.cache
